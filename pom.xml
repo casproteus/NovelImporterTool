@@ -1,0 +1,89 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.stgo.tool</groupId>
+  <version>1-SNAPSHOT</version>
+
+  <artifactId>novelimporttool</artifactId>
+  <name>Novel Import Tool</name>
+  
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <jdkName>JavaSE-1.8</jdkName>
+    <jdk.version>1.8</jdk.version>
+  </properties>
+  
+  <dependencies>
+
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derbynet</artifactId>
+	    <version>10.14.2.0</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derbyclient</artifactId>
+	    <version>10.14.2.0</version>
+	</dependency>
+		
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+    	<version>4.10</version>
+		<scope>test</scope>
+	</dependency>
+	
+  </dependencies>
+ 
+
+  <build>
+  	<plugins>
+  		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<encoding>UTF-8</encoding>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-dependency-plugin</artifactId>
+		    <executions>
+			<execution>
+			    <id>copy-dependencies</id>
+			    <phase>prepare-package</phase>
+			    <goals>
+					<goal>copy-dependencies</goal>
+			    </goals>
+			    <configuration>
+					<outputDirectory>
+					    target/libs
+					</outputDirectory>
+			    </configuration>
+			</execution>
+		    </executions>
+		</plugin>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-jar-plugin</artifactId>
+		    <configuration>
+			<archive>
+			    <manifest>
+				<addClasspath>true</addClasspath>
+				<classpathPrefix>lib/</classpathPrefix>
+				<mainClass>
+				    ui.MainFrame
+				</mainClass>
+			    </manifest>
+			</archive>
+		    </configuration>
+		</plugin>
+	</plugins>
+  </build>
+    
+  </project>

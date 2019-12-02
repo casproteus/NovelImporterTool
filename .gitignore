@@ -1,0 +1,6 @@
+/target/
+/books/
+/books/*
+*/*_log.txt
+*/database/pim.*
+derby.log

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<novels>
+   <novel title="testNovel1">
+      <author>Agatha Christie</author>
+      <publishTime>1977-01-02</publishTime>
+      <foreword>The list of fiction includes everything from classics like F. Scott Fitzgerald's "The Great Gatsby" to Harper Lee's newly released novel "Go Set a Watchman."</foreword>
+   </novel>
+   <novel title="testNovel2">
+      <author>Danielle Steel</author>
+      <publishTime>1977-01-03</publishTime>
+      <foreword>In this novel, Holden Caulfield tells the story of a few days in his 16-year-old-life, soon after he is expelled from prep school. </foreword>
+   </novel>
+</novels>
